@@ -26,33 +26,10 @@ const status = document.getElementById('status');
 const historyContainer = document.getElementById('historyContainer');
 
 /**
- * Update the current reading display
- */
-function updateCurrentReading(data) {
-    // Update pressure value
-    pressureValue.textContent = data.pressure.toFixed(2);
-
-    // Update timestamp
-    const date = new Date(data.timestamp);
-    timestamp.textContent = date.toLocaleString();
-
-    // Update image
-    if (data.image) {
-        gaugeImage.src = `data:image/jpeg;base64,${data.image}`;
-        gaugeImage.classList.add('visible');
-        noImagePlaceholder.style.display = 'none';
-    }
-
-    // Update status
-    status.textContent = 'Active';
-    status.className = 'value status-indicator active';
-}
-
-/**
  * Listen to Firestore for real-time updates
  */
 function listenToFirestore() {
-    /*
+    
     // Uncomment when Firebase is configured
     const q = query(
         collection(db, 'readings'),
@@ -77,7 +54,7 @@ function listenToFirestore() {
             timestamp.textContent = date.toLocaleString();
         }
     });
-    */
+    
 }
 
 /**
