@@ -8,14 +8,30 @@
     ],
     "rewrites": [
       {
-        "source": "/api/**",
-        "function": "pressure-watcher"
+        "source": "**",
+        "destination": "/index.html"
       }
     ]
   },
-  "functions": {
-    "source": "backend",
-    "runtime": "python311",
-    "entry_point": "app"
+  "functions": [
+    {
+      "codebase": "default",
+      "entry_point": "app",
+      "source": "backend",
+      "runtime": "python313",
+      "ignore": [
+        "venv",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "*.local"
+      ]
+    }
+  ],
+  "firestore": {
+    "database": "(default)",
+    "location": "eur3",
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
   }
 }
