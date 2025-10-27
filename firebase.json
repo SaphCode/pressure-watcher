@@ -1,0 +1,21 @@
+{
+  "hosting": {
+    "public": "frontend",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "/api/**",
+        "function": "pressure-watcher"
+      }
+    ]
+  },
+  "functions": {
+    "source": "backend",
+    "runtime": "python311",
+    "entry_point": "app"
+  }
+}

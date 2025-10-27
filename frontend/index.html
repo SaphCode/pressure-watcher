@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pressure Watcher</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Pressure Watcher</h1>
+            <p class="subtitle">Real-time Analog Pressure Gauge Monitor</p>
+        </header>
+
+        <main>
+            <div class="current-reading">
+                <h2>Current Reading</h2>
+                <div class="reading-card">
+                    <div class="image-container">
+                        <img id="gaugeImage" src="" alt="Pressure Gauge" />
+                        <div id="noImagePlaceholder" class="placeholder">
+                            <p>Waiting for image...</p>
+                        </div>
+                    </div>
+                    <div class="reading-info">
+                        <div class="info-item">
+                            <span class="label">Pressure:</span>
+                            <span id="pressureValue" class="value">--</span>
+                            <span class="unit">PSI</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Last Updated:</span>
+                            <span id="timestamp" class="value">--</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Status:</span>
+                            <span id="status" class="value status-indicator">Waiting</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="history">
+                <h2>Reading History</h2>
+                <div id="historyContainer" class="history-list">
+                    <p class="placeholder">Loading history...</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module" src="app.js"></script>
+</body>
+</html>
